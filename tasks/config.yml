@@ -1,0 +1,15 @@
+---
+- name: Setting Up Apache Web Server
+  template:
+        src: templates/index.j2
+        dest: /var/www/html/index.html
+- name: Allowing HTTP Traffic in the Firewall.
+  firewalld:
+        service: http
+        permanent: yes
+        state: enabled
+- name: Reloaded the firewall service
+  service:
+      name: firewalld
+      state: reloaded
+...

@@ -1,0 +1,7 @@
+---
+- name: Starting & Enabling Apache HTTPD Service
+  service:
+        name: httpd
+        state: started
+        enabled: true
+...
